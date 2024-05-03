@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookstore Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Bookstore Management</h1>
+    <!-- Formular pentru adăugarea unei cărți -->
+    <form id="add-book-form">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="author" placeholder="Author" required>
+        <input type="text" id="genre" placeholder="Genre">
+        <input type="number" id="price" placeholder="Price" step="0.01" required>
+        <input type="datetime-local" id="published-date" required>
+        <button type="submit">Add Book</button>
+    </form>
+
+    <!-- Formular pentru căutarea unei cărți după ID -->
+    <form id="find-book-form">
+        <input type="number" id="find-book-id" placeholder="Enter Book ID" required>
+        <button type="button" id="find-book-button">Find Book by ID</button>
+    </form>
+
+    <!-- Formular pentru ștergerea unei cărți după ID -->
+    <form id="delete-book-form">
+        <input type="number" id="delete-book-id" placeholder="Enter Book ID" required>
+        <button type="button" id="delete-book-button">Delete Book</button>
+    </form>
+
+    <button id="see-all-books">See All Books</button>
+
+    <!-- Lista cărților -->
+    <div id="book-list"></div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

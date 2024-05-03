@@ -1,0 +1,123 @@
+/* Stilizare pentru containerul principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilizare pentru formularul de adăugare a cărților */
+#add-book-form {
+    margin-bottom: 20px;
+}
+
+/* Stilizare pentru input-uri și butoane */
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Stilizare pentru lista de cărți */
+#book-list {
+    padding: 0;
+    margin-top: 20px; /* Adaugare margin-top pentru a separa lista de butonul "See All Books" */
+    display: flex; /* Folosim flexbox pentru a aranja cărțile */
+    flex-wrap: wrap; /* Permite cărților să se așeze pe mai multe rânduri */
+}
+
+.book-item {
+    flex-basis: calc(33.33% - 20px); /* Setează lățimea pentru a afișa maxim 3 cărți pe rând */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 20px; /* Margin mai mare între cărți */
+    animation: fall 1s ease forwards;
+}
+
+/* Clasa pentru ascunderea cărților */
+.hidden {
+    display: none;
+}
+#background-books {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Asigură-te că pozele nu vor interfera cu interacțiunea utilizatorului */
+}
+
+.book-image {
+    position: absolute;
+    width: 50px; /* Ajustează dimensiunile imaginilor după preferințele tale */
+    animation: fall 10s infinite linear; /* Specifică animația pentru căderea continuă */
+}
+
+
+/* Animatie pentru cărți - efect de cădere */
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Animatie pentru afișarea treptată a cărților */
+.fadeIn {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Stilizare pentru titlu */
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #007bff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    animation: float 3s infinite ease-in-out;
+    margin-bottom: 20px;
+}
+
+/* Animatie pentru titlu - efect de plutire */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
